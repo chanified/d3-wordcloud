@@ -12,6 +12,7 @@
         fontSize = null,
         svg = null,
         vis = null;
+        rotate = null;
 
     wordcloud.element = function(x) {
       if (!arguments.length) return element;
@@ -46,6 +47,12 @@
     wordcloud.start = function() {
       init();
       layout.start(arguments);
+      return wordcloud;
+    };
+    
+    wordcloud.rotate = function(x) {
+      if (!arguments.length) return rotate;
+      rotate = d3.functor(x);
       return wordcloud;
     };
 
@@ -141,7 +148,7 @@
       }
     }
 
-    return d3.rebind(wordcloud, layout, 'on', 'words', 'size', 'font', 'fontStyle', 'fontWeight', 'spiral', 'padding');
+    return d3.rebind(wordcloud, layout, 'on', 'words', 'size', 'font', 'fontStyle', 'fontWeight', 'spiral', 'padding', 'rotate');
   }
 
   if (typeof module === "object" && module.exports) module.exports = wordcloud;
