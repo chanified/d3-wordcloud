@@ -49,6 +49,7 @@ In addition to this, the following d3-cloud properties are accepted:
 * `fontWeight()`
 * `spiral()`, which can be `archimedean` or `rectangular`
 * `padding()`
+* `rotate()` 
 
 As a bonus, if a word contains a `href` key, the word will link to the value,
 and the word will become slightly larger when the mouse hovers over (to
